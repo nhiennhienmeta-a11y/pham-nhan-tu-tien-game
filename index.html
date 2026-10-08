@@ -109,6 +109,7 @@
             </p>
 
             <div class="welcome-text">
+
                 <p>
                     Thiên địa rộng lớn, tiên lộ mịt mờ.
                 </p>
@@ -117,9 +118,11 @@
                     Trước khi bước vào con đường tu tiên,
                     hãy xác lập thân phận của ngươi.
                 </p>
+
             </div>
 
             <div class="form-group">
+
                 <label for="character-name">
                     Tên nhân vật
                 </label>
@@ -130,20 +133,31 @@
                     placeholder="Nhập tên nhân vật..."
                     maxlength="20"
                 >
+
             </div>
 
             <div class="form-group">
+
                 <label for="character-gender">
                     Giới tính
                 </label>
 
                 <select id="character-gender">
-                    <option value="nam">Nam</option>
-                    <option value="nu">Nữ</option>
+
+                    <option value="nam">
+                        Nam
+                    </option>
+
+                    <option value="nu">
+                        Nữ
+                    </option>
+
                 </select>
+
             </div>
 
             <div class="form-group">
+
                 <label for="character-age">
                     Tuổi
                 </label>
@@ -155,6 +169,7 @@
                     min="1"
                     max="100"
                 >
+
             </div>
 
             <button
@@ -174,31 +189,66 @@
         <div id="game-screen" class="hidden">
 
             <header class="game-header">
-                <h1>PHÀM NHÂN TU TIÊN</h1>
-                <p>Nhân sinh tu tiên — từng bước nghịch thiên cải mệnh</p>
+
+                <h1>
+                    PHÀM NHÂN TU TIÊN
+                </h1>
+
+                <p>
+                    Nhân sinh tu tiên — từng bước nghịch thiên cải mệnh
+                </p>
+
             </header>
 
 
             <section class="status">
 
                 <div>
-                    <span>Nhân vật</span>
-                    <strong id="player-name">Chưa tạo</strong>
+
+                    <span>
+                        Nhân vật
+                    </span>
+
+                    <strong id="player-name">
+                        Chưa tạo
+                    </strong>
+
                 </div>
 
                 <div>
-                    <span>Cảnh giới</span>
-                    <strong id="player-realm">Phàm nhân</strong>
+
+                    <span>
+                        Cảnh giới
+                    </span>
+
+                    <strong id="player-realm">
+                        Phàm nhân
+                    </strong>
+
                 </div>
 
                 <div>
-                    <span>Linh lực</span>
-                    <strong id="player-spirit">0</strong>
+
+                    <span>
+                        Linh lực
+                    </span>
+
+                    <strong id="player-spirit">
+                        0
+                    </strong>
+
                 </div>
 
                 <div>
-                    <span>Linh thạch</span>
-                    <strong id="player-stone">0</strong>
+
+                    <span>
+                        Linh thạch
+                    </span>
+
+                    <strong id="player-stone">
+                        0
+                    </strong>
+
                 </div>
 
             </section>
@@ -222,7 +272,8 @@
                     </p>
 
                     <p>
-                        Một ngày nọ, một người xa lạ xuất hiện trước cửa thôn.
+                        Một ngày nọ, một người xa lạ xuất hiện
+                        trước cửa thôn.
                     </p>
 
                     <p>
@@ -256,163 +307,8 @@
 
 
     <!-- =========================
-         JAVASCRIPT
+         CHỈ GIỮ LẠI GAME.JS
          ========================= -->
-
-    <script>
-
-        function createCharacter() {
-
-            const nameInput =
-                document.getElementById("character-name");
-
-            const genderInput =
-                document.getElementById("character-gender");
-
-            const ageInput =
-                document.getElementById("character-age");
-
-            const name =
-                nameInput.value.trim();
-
-            const gender =
-                genderInput.value;
-
-            const age =
-                Number(ageInput.value);
-
-
-            /* Kiểm tra tên */
-
-            if (!name) {
-
-                alert("Hãy nhập tên nhân vật.");
-
-                nameInput.focus();
-
-                return;
-            }
-
-
-            /* Kiểm tra tuổi */
-
-            if (age < 1 || age > 100) {
-
-                alert("Tuổi nhân vật không hợp lệ.");
-
-                ageInput.focus();
-
-                return;
-            }
-
-
-            /* Tạo dữ liệu nhân vật */
-
-            const player = {
-
-                name: name,
-
-                gender: gender,
-
-                age: age,
-
-                realm: "Phàm nhân",
-
-                spirit: 0,
-
-                stone: 0
-
-            };
-
-
-            /* Lưu nhân vật trên trình duyệt */
-
-            localStorage.setItem(
-                "phamNhanPlayer",
-                JSON.stringify(player)
-            );
-
-
-            /* Hiển thị tên */
-
-            document.getElementById("player-name").textContent =
-                player.name;
-
-
-            document.getElementById("player-realm").textContent =
-                player.realm;
-
-
-            document.getElementById("player-spirit").textContent =
-                player.spirit;
-
-
-            document.getElementById("player-stone").textContent =
-                player.stone;
-
-
-            /* Chuyển sang màn hình game */
-
-            document
-                .getElementById("character-creation")
-                .classList.add("hidden");
-
-
-            document
-                .getElementById("game-screen")
-                .classList.remove("hidden");
-
-        }
-
-
-        /* =========================
-           KIỂM TRA NHÂN VẬT ĐÃ LƯU
-           ========================= */
-
-        window.addEventListener("DOMContentLoaded", function () {
-
-            const savedPlayer =
-                localStorage.getItem("phamNhanPlayer");
-
-
-            if (!savedPlayer) {
-                return;
-            }
-
-
-            const player =
-                JSON.parse(savedPlayer);
-
-
-            document.getElementById("player-name").textContent =
-                player.name;
-
-
-            document.getElementById("player-realm").textContent =
-                player.realm;
-
-
-            document.getElementById("player-spirit").textContent =
-                player.spirit;
-
-
-            document.getElementById("player-stone").textContent =
-                player.stone;
-
-
-            document
-                .getElementById("character-creation")
-                .classList.add("hidden");
-
-
-            document
-                .getElementById("game-screen")
-                .classList.remove("hidden");
-
-        });
-
-    </script>
-
 
     <script src="js/game.js"></script>
 
