@@ -1,1 +1,165 @@
+* {
+    box-sizing: border-box;
+}
 
+body {
+    margin: 0;
+    padding: 20px;
+
+    background: #11100d;
+    color: #ded8c8;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+}
+
+.game {
+    width: 100%;
+    max-width: 850px;
+
+    margin: 0 auto;
+}
+
+.game-header {
+    text-align: center;
+
+    padding: 30px 20px;
+
+    border-bottom: 1px solid #514a3b;
+}
+
+.game-header h1 {
+    margin: 0;
+
+    font-size: 30px;
+
+    color: #d8b86a;
+
+    letter-spacing: 3px;
+}
+
+.game-header p {
+    margin-top: 10px;
+
+    color: #8f897b;
+}
+
+.status {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+
+    margin: 20px 0;
+}
+
+.status div {
+    padding: 15px;
+
+    background: #191713;
+
+    border: 1px solid #383329;
+
+    text-align: center;
+}
+
+.status span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #777064;
+
+    font-size: 13px;
+}
+
+.status strong {
+    color: #d4b86a;
+}
+
+.story {
+    padding: 25px;
+
+    min-height: 350px;
+
+    background: #171511;
+
+    border: 1px solid #393329;
+
+    line-height: 1.9;
+}
+
+.story h2 {
+    margin-top: 0;
+
+    color: #c9a95b;
+
+    border-bottom: 1px solid #393329;
+
+    padding-bottom: 12px;
+}
+
+.story p {
+    margin: 18px 0;
+}
+
+.choices {
+    display: grid;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.choices button {
+    padding: 15px;
+
+    background: #211e18;
+
+    color: #d8d0bd;
+
+    border: 1px solid #514836;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    transition: 0.2s;
+}
+
+.choices button:hover {
+    background: #2c281e;
+
+    border-color: #9b7e3c;
+
+    color: #e5c878;
+}
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .game-header h1 {
+        font-size: 22px;
+    }
+
+    .status {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .story {
+        padding: 18px;
+    }
+
+}
