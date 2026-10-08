@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Phàm Nhân Tu Tiên - Game Văn Bản</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <main class="game">
+
+        <header class="game-header">
+            <h1>PHÀM NHÂN TU TIÊN</h1>
+            <p>Nhân sinh tu tiên — từng bước nghịch thiên cải mệnh</p>
+        </header>
+
+        <section class="status">
+
+            <div>
+                <span>Nhân vật</span>
+                <strong id="player-name">Chưa tạo</strong>
+            </div>
+
+            <div>
+                <span>Cảnh giới</span>
+                <strong id="player-realm">Phàm nhân</strong>
+            </div>
+
+            <div>
+                <span>Linh lực</span>
+                <strong id="player-spirit">0</strong>
+            </div>
+
+            <div>
+                <span>Linh thạch</span>
+                <strong id="player-stone">0</strong>
+            </div>
+
+        </section>
+
+        <section class="story">
+
+            <h2 id="story-title">Sơn Biên Tiểu Thôn</h2>
+
+            <div id="story-text">
+
+                <p>
+                    Đây là một sơn thôn nhỏ nằm giữa núi rừng.
+                </p>
+
+                <p>
+                    Ngươi chỉ là một phàm nhân bình thường,
+                    chưa từng biết đến thế giới tu tiên bên ngoài.
+                </p>
+
+                <p>
+                    Một ngày nọ, một người xa lạ xuất hiện trước cửa thôn.
+                </p>
+
+                <p>
+                    Vận mệnh của ngươi bắt đầu từ khoảnh khắc này.
+                </p>
+
+            </div>
+
+        </section>
+
+        <section class="choices">
+
+            <button onclick="choose(1)">
+                ① Tiến lên hỏi người lạ
+            </button>
+
+            <button onclick="choose(2)">
+                ② Đứng từ xa quan sát
+            </button>
+
+            <button onclick="choose(3)">
+                ③ Rời khỏi nơi này
+            </button>
+
+        </section>
+
+    </main>
+
+    <script src="js/game.js"></script>
+
+</body>
+</html>
